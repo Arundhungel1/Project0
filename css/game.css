@@ -1,0 +1,43 @@
+body {
+    background: #323232;
+}
+
+#gameWrapper {
+    width: 450px;
+    height: 455px;
+    margin: 0 auto;
+    background: gray;
+    margin-top: 50px;
+    border-left: 0px solid gray;
+}
+
+.row {
+    width: 100%;
+    height: 150px;
+}
+
+.square {
+    width: 32%;
+    height: 145.5px;
+    border: 3px solid white;
+    float: left;
+    text-align: center;
+    font-size: 150px;
+    font-family: helvetica;
+    color: white;
+    cursor: pointer;
+}
+
+#panel {
+    width: 430px;
+    padding: 10px;
+    margin: 0 auto;
+    background: #f43a3a;
+}
+
+#board {
+    font-size: 30px;
+    font-family: helvetica;
+    color: whitesmoke;
+    margin-top: 10px;
+}
