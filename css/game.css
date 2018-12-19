@@ -33,11 +33,21 @@ body {
     padding: 10px;
     margin: 0 auto;
     background: #f43a3a;
+    height: 70px;
 }
 
 #board {
-    font-size: 30px;
+    height: font-size: 30px;
     font-family: helvetica;
     color: whitesmoke;
     margin-top: 10px;
+    height: 45px;
+}
+
+#player-2 {
+    float: right
+}
+
+#playButton {
+    margin-left: 70px;
 }

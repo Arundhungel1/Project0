@@ -1,4 +1,5 @@
 let player = 1;
+moveCount = 0;
 
 $('.square').on('click', function(event) {
 
@@ -6,6 +7,7 @@ $('.square').on('click', function(event) {
     if (squareSelected.hasClass('X') || squareSelected.hasClass('Y')) {
         alert("This box has already been played. Please select another box.")
     } else {
+        moveCount++;
         if (player === 1) {
             squareSelected.addClass('X');
             squareSelected.text('X');
@@ -18,12 +20,10 @@ $('.square').on('click', function(event) {
             squareSelected.text('Y');
             if (winnerCheck('Y')) {
                 alert("Congrats! Player " + player + " has won.")
-                player = 1;
-            } else {
-
             }
-
+            player = 1;
         }
+
     }
 });
 const winnerCheck = function(symbol) {
