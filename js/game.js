@@ -1,13 +1,14 @@
 let player = 1;
-moveCount = 0;
+let moveCount = 0;
+
 
 $('.square').on('click', function(event) {
 
     let squareSelected = $(this);
+
     if (squareSelected.hasClass('X') || squareSelected.hasClass('Y')) {
         alert("This box has already been played. Please select another box.")
     } else {
-        moveCount++;
         if (player === 1) {
             squareSelected.addClass('X');
             squareSelected.text('X');
@@ -24,9 +25,13 @@ $('.square').on('click', function(event) {
             player = 1;
         }
 
+
     }
+
+
 });
 const winnerCheck = function(symbol) {
+    moveCount++;
     if ($('.sq1').hasClass(symbol) && $('.sq2').hasClass(symbol) && $('.sq3').hasClass(symbol)) {
         return true;
     } else if ($('.sq4').hasClass(symbol) && $('.sq5').hasClass(symbol) && $('.sq6').hasClass(symbol)) {
@@ -43,6 +48,9 @@ const winnerCheck = function(symbol) {
         return true;
     } else if ($('.sq3').hasClass(symbol) && $('.sq5').hasClass(symbol) && $('.sq7').hasClass(symbol)) {
         return true;
+    } else if (moveCount >= 9) {
+        alert("Match Drawn");
+        return false;
     } else {
         return false;
     }
