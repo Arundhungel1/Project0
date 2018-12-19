@@ -1,13 +1,32 @@
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display|Staatliches');
+@import url('https://fonts.googleapis.com/css?family=VT323');
 body {
     background: #323232;
+}
+
+h1 {
+    font-family: 'Major Mono Display', monospace;
+    font-family: 'Staatliches', cursive;
+    text-align: center;
+    font-size: 45px;
+    margin: 0px;
+    color: white;
+}
+
+h2 {
+    font-family: 'Major Mono Display', monospace;
+    text-align: center;
+    font-size: 35px;
+    margin: 0px;
+    color: white;
 }
 
 #gameWrapper {
     width: 450px;
     height: 455px;
-    margin: 0 auto;
     background: gray;
-    margin-top: 50px;
+    margin-top: 10px;
     border-left: 0px solid gray;
 }
 
@@ -29,19 +48,19 @@ body {
 }
 
 #panel {
+    font-family: 'VT323', monospace;
     width: 430px;
     padding: 10px;
     margin: 0 auto;
-    background: #f43a3a;
     height: 70px;
 }
 
 #board {
-    height: font-size: 30px;
-    font-family: helvetica;
+    font-size: 40px;
+    font-family: 'VT323', monospace;
     color: whitesmoke;
-    margin-top: 10px;
-    height: 45px;
+    margin-top: 15px;
+    height: 90px;
 }
 
 #player-2 {
@@ -49,5 +68,5 @@ body {
 }
 
 #playButton {
-    margin-left: 70px;
+    margin-left: 65px;
 }

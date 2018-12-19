@@ -1,34 +1,30 @@
 let player = 1;
 let moveCount = 0;
 
-
+const boardMsg = function(X) {
+    return $("#board").text(X);
+}
 $('.square').on('click', function(event) {
-
     let squareSelected = $(this);
-
     if (squareSelected.hasClass('X') || squareSelected.hasClass('Y')) {
-        alert("This box has already been played. Please select another box.")
+        boardMsg("Please select another box.");
     } else {
         if (player === 1) {
             squareSelected.addClass('X');
             squareSelected.text('X');
             if (winnerCheck('X')) {
-                alert("Congrats! Player " + player + " has won.")
+                boardMsg("Congrats! Player " + player + " has won.");
             }
             player = 2;
         } else {
             squareSelected.addClass('Y');
             squareSelected.text('Y');
             if (winnerCheck('Y')) {
-                alert("Congrats! Player " + player + " has won.")
+                boardMsg("Congrats! Player " + player + " has won.");
             }
             player = 1;
         }
-
-
     }
-
-
 });
 const winnerCheck = function(symbol) {
     moveCount++;
@@ -49,10 +45,10 @@ const winnerCheck = function(symbol) {
     } else if ($('.sq3').hasClass(symbol) && $('.sq5').hasClass(symbol) && $('.sq7').hasClass(symbol)) {
         return true;
     } else if (moveCount >= 9) {
-        alert("Match Drawn");
+        boardMsg("Match Drawn");
         return false;
     } else {
         return false;
     }
 
-}
+};
