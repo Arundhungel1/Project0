@@ -8,25 +8,25 @@ let moveCount = 0;
 
 
 const boardMsg = function(X) { //Setting up display board where game info is displayed
-    return $("#board").text(X);
+    return $('#board').text(X);
 }
 
 
-$("#btn").on("click", function() { //applying logic to reset button to restart the game
-    $(".square").text("").removeClass("X Y");
+$('#btn').on('click', function() { //applying logic to reset button to restart the game
+    $('.square').text("").removeClass("X Y");
     boardMsg("");
     moveCount = 0;
 });
 
-$("#playButton").click(function() { // function to  start the game
+$('#playButton').on('click', function() { // function to  start the game
 
     if (hasWinner === 1) {
         boardMsg("Please reset the game!")
 
     }
 
-    player1Name = $("#player-1").val(); //adding name of the players
-    player2Name = $("#player-2").val();
+    player1Name = $('#player-1').val(); //adding name of the players
+    player2Name = $('#player-2').val();
 
     if (player1Name === "" || player2Name === "") { // logic to ask user to enter player name
         alert("Please set player all the names.");
