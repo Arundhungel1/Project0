@@ -1,6 +1,6 @@
-Project0
+## Project0
 
-Tic Tac Toe
+## Tic Tac Toe
 
 We're going to be build a tic-tac-toe application using HTML, CSS, and Javascript/jQuery. 
 
