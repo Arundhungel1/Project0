@@ -1,26 +1,80 @@
-let player = 1;
-let moveCount = 0;
+let player1Name = "",
+    player2Name = "",
+    turn = "";
+player = 1;
+let grid = [
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0]
+];
+let hasWinner = 0,
+    moveCount = 0;
+
 
 const boardMsg = function(X) {
     return $("#board").text(X);
 }
+
+
+const init = function() {
+    turn = "";
+    grid = [
+        [0, 0, 0],
+        [0, 0, 0],
+        [0, 0, 0]
+    ];
+    boardMsg("");
+    $(".square").map(function() {
+        $('.square').text("");
+    }).get();
+    hasWinner = 0;
+    moveCount = 0;
+};
+$("#playButton").click(function() {
+
+    if (hasWinner === 1) {
+        $("#playButton").text("Play again");
+        boardMsg("Please play again!")
+        init();
+    }
+
+    player1Name = $("#player-1").val();
+    player2Name = $("#player-2").val();
+
+    if (player1Name === "" || player2Name === "") {
+        alert("Please set player all the names.");
+        return;
+    }
+
+});
+
 $('.square').on('click', function(event) {
     let squareSelected = $(this);
+    if (player1Name == "" || player2Name == "") {
+        alert("Please set player all the names.");
+        return;
+    }
+
     if (squareSelected.hasClass('X') || squareSelected.hasClass('Y')) {
         boardMsg("Please select another box.");
     } else {
+
         if (player === 1) {
+            boardMsg(player2Name + "'s turn now!");
             squareSelected.addClass('X');
             squareSelected.text('X');
             if (winnerCheck('X')) {
-                boardMsg("Congrats! Player " + player + " has won.");
+                hasWinner = 1;
+                boardMsg("Congrats! Player " + player1Name + " has won.");
             }
             player = 2;
         } else {
+            boardMsg(player1Name + "'s turn now!");
             squareSelected.addClass('Y');
             squareSelected.text('Y');
             if (winnerCheck('Y')) {
-                boardMsg("Congrats! Player " + player + " has won.");
+                hasWinner = 1;
+                boardMsg("Congrats! Player " + player2Name + " has won.");
             }
             player = 1;
         }
