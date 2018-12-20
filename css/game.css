@@ -56,9 +56,9 @@ h2 {
 }
 
 #board {
-    font-size: 40px;
+    font-size: 30px;
     font-family: 'VT323', monospace;
-    color: whitesmoke;
+    color: white;
     margin-top: 15px;
     height: 70px;
 }

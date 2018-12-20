@@ -52,7 +52,8 @@ $('.square').on('click', function(event) {
             squareSelected.text('X');
             if (winnerCheck('X')) { //check if player 1 is winner
                 hasWinner = 1;
-                boardMsg("Congrats! Player " + player1Name + " has won.");
+                boardMsg("Congrats! Player " + player1Name + " has won. Please reset the game!");
+                return;
             }
             player = 2; // if not go to player 2
         } else {
@@ -61,7 +62,8 @@ $('.square').on('click', function(event) {
             squareSelected.text('Y');
             if (winnerCheck('Y')) {
                 hasWinner = 1;
-                boardMsg("Congrats! Player " + player2Name + " has won.");
+                boardMsg("Congrats! Player " + player2Name + " has won. Please reset the game!");
+                return;
             }
             player = 1;
         }
@@ -87,7 +89,7 @@ const winnerCheck = function(symbol) { //winning conditions logic
         return true;
     } else if (moveCount >= 9) { // logic to check if match is a draw
         hasWinner = 1;
-        boardMsg("Match Drawn");
+        boardMsg("Match Drawn. Please reset the game!");
         return false;
     } else {
         return false;
