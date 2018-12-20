@@ -33,9 +33,20 @@ Once the game has a winner or there is a draw, you will see a dialog informing a
 * Repeat the game with the same players selection.
 * Start a new game.
 
+
 ![alt text](screenshots/game_layout1.png "screenshot 1")
+
+
+
 This is how the game looks like in the web page.
+
+
+
 ![alt text](screenshots/game_layout2.png "screenshot 2")
+
+
+
+
 Once you have a winner/ draw, you will see a dialog like this informing the result.
 
 
