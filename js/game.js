@@ -1,25 +1,28 @@
-let player1Name = "",
-    player2Name = "",
-    turn = "";
-player = 1;
-let grid = [
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0]
-];
-let hasWinner = 0,
-    moveCount = 0;
+let player1Name = "";
+let player2Name = "";
+
+let player = 1;
+
+let hasWinner = 0;
+let moveCount = 0;
 
 
 const boardMsg = function(X) {
     return $("#board").text(X);
 }
 
+
+$("#btn").on("click", function() {
+    $(".square").text("").removeClass("X Y");
+    boardMsg("");
+    moveCount = 0;
+});
+
 $("#playButton").click(function() {
 
     if (hasWinner === 1) {
         boardMsg("Please reset the game!")
-        reseting();
+
     }
 
     player1Name = $("#player-1").val();
