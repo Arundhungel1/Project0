@@ -51,3 +51,6 @@ Once you have a winner/ draw, you will see a dialog like this informing the resu
 
 
 
+## License
+MIT
+
