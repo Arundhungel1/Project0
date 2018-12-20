@@ -60,7 +60,7 @@ h2 {
     font-family: 'VT323', monospace;
     color: whitesmoke;
     margin-top: 15px;
-    height: 90px;
+    height: 70px;
 }
 
 #player-2 {
@@ -69,4 +69,9 @@ h2 {
 
 #playButton {
     margin-left: 65px;
+}
+
+#btn {
+    margin-left: 210px;
+    margin-top: 10px;
 }

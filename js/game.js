@@ -15,27 +15,11 @@ const boardMsg = function(X) {
     return $("#board").text(X);
 }
 
-
-const init = function() {
-    turn = "";
-    grid = [
-        [0, 0, 0],
-        [0, 0, 0],
-        [0, 0, 0]
-    ];
-    boardMsg("");
-    $(".square").map(function() {
-        $('.square').text("");
-    }).get();
-    hasWinner = 0;
-    moveCount = 0;
-};
 $("#playButton").click(function() {
 
     if (hasWinner === 1) {
-        $("#playButton").text("Play again");
-        boardMsg("Please play again!")
-        init();
+        boardMsg("Please reset the game!")
+        reseting();
     }
 
     player1Name = $("#player-1").val();
@@ -99,6 +83,7 @@ const winnerCheck = function(symbol) {
     } else if ($('.sq3').hasClass(symbol) && $('.sq5').hasClass(symbol) && $('.sq7').hasClass(symbol)) {
         return true;
     } else if (moveCount >= 9) {
+        hasWinner = 1;
         boardMsg("Match Drawn");
         return false;
     } else {
